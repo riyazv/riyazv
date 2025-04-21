@@ -27,4 +27,4 @@ jobs:
           target_branch: output
           build_dir: pacman-contribution-graph  # this is the actual default build folder
         env:
-          GITHUB_TOKEN: ${{ secrets.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 }}
+          GITHUB_TOKEN: ${{ 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 }}
