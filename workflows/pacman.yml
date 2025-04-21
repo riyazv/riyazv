@@ -2,7 +2,7 @@ name: Generate pacman animation
 
 on:
   schedule:
-    - cron: "0 */12 * * *"  # every 12 hours
+    - cron: "0 */12 * * *"
   workflow_dispatch:
   push:
     branches:
@@ -16,6 +16,8 @@ jobs:
     timeout-minutes: 5
 
     steps:
+      - uses: actions/checkout@v3
+
       - name: generate pacman-contribution-graph.svg
         uses: abozanona/pacman-contribution-graph@main
         with:
@@ -25,6 +27,6 @@ jobs:
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
-          build_dir: pacman-contribution-graph  # this is the actual default build folder
+          build_dir: pacman-contribution-graph
         env:
-          GITHUB_TOKEN: ${{ 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 }}
+          GITHUB_TOKEN: ${{ secrets.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 }}
