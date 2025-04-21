@@ -19,7 +19,7 @@ jobs:
       - name: generate pacman-contribution-graph.svg
         uses: abozanona/pacman-contribution-graph@main
         with:
-          github_user_name: riyazv
+          github_user_name: ${{ github.riyazv }}
 
       - name: push pacman-contribution-graph.svg to the output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
@@ -27,4 +27,4 @@ jobs:
           target_branch: output
           build_dir: pacman-contribution-graph  # this is the actual default build folder
         env:
-          GITHUB_TOKEN: ${{ secrets.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 }}
+          GITHUB_TOKEN: ${{ secrets.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 }}
